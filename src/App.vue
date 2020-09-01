@@ -3,7 +3,7 @@
     <Container>
       <div class="wrapper">
         <main class="main">
-          <PostList :posts="posts" />
+          <PostArea :posts="posts" />
         </main>
         <aside class="sidebar">
           <TimeLine />
@@ -16,13 +16,13 @@
 <script>
   import Container from './layouts/Container'
   import TimeLine from './components/TimeLine'
-  import PostList from './components/PostList'
+  import PostArea from './views/PostArea'
 
   export default {
     components: {
       Container,
       TimeLine,
-      PostList
+      PostArea
     },
 
     data() {
