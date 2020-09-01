@@ -6,7 +6,7 @@
           aaa
         </main>
         <aside class="sidebar">
-          bbb
+          <TimeLine />
         </aside>
       </div>
     </Container>
@@ -15,10 +15,12 @@
 
 <script>
   import Container from './layouts/Container'
+  import TimeLine from './components/TimeLine'
 
   export default {
     components: {
-      Container
+      Container,
+      TimeLine
     }
   };
 </script>
