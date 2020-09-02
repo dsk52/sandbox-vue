@@ -1,28 +1,36 @@
 <template>
-  <div>
-    <Container>
-      <div class="wrapper">
-        <main class="main">
-          <PostArea :posts="posts" />
-        </main>
-        <aside class="sidebar">
-          <TimeLine />
-        </aside>
-      </div>
-    </Container>
-  </div>
+  <Container>
+    <div class="wrapper">
+      <main class="main">
+        <Tab>
+          <template v-slot:postTab>タブA</template>
+          <template v-slot:subTab>タブB</template>
+
+          <template v-slot:postTabContent>
+            <PostArea :posts="posts"></PostArea>
+          </template>
+          <template v-slot:subTabContent>タブBコンテンツ</template>
+        </Tab>
+      </main>
+      <aside class="sidebar">
+        <TimeLine />
+      </aside>
+    </div>
+  </Container>
 </template>
 
 <script>
   import Container from './layouts/Container'
   import TimeLine from './components/TimeLine'
   import PostArea from './views/PostArea'
+  import Tab from './components/Tab'
 
   export default {
     components: {
       Container,
       TimeLine,
-      PostArea
+      PostArea,
+      Tab
     },
 
     data() {
